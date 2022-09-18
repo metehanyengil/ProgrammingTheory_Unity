@@ -7,12 +7,14 @@ public class Car : MonoBehaviour
 {
 
    Rigidbody physics;
-  public float speed = 500;
+   protected float speed;
+ 
     
     void Start()
     {
 
         physics = GetComponent<Rigidbody>();
+        speed = 500;
         
     }
 
@@ -26,10 +28,12 @@ public class Car : MonoBehaviour
 
     public virtual void CarMove(){
 
+
+
         if(Input.GetKeyDown(KeyCode.Space)&& physics !=null){
 
             physics.AddForce((Vector3.right*speed),ForceMode.Force);
-            Debug.Log("Woww");
+            Debug.Log("Car");
 
         
 
